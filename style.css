@@ -1,0 +1,1728 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #090909;
+    color: #ffffff;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening-screen {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3a202c 0%,
+            #1b1117 35%,
+            #090909 75%
+        );
+}
+
+.opening-screen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 160, 190, 0.08);
+
+    filter: blur(80px);
+
+    animation: glow 6s ease-in-out infinite alternate;
+}
+
+.opening-screen::after {
+    content: "✦  ·  ✧  ·  ✦  ·  ✧";
+
+    position: absolute;
+
+    top: 12%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(255, 255, 255, 0.35);
+
+    font-size: 14px;
+
+    letter-spacing: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   OPENING CONTENT
+========================= */
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 700px;
+
+    animation: appear 1.5s ease forwards;
+}
+
+.small-text {
+    font-size: 14px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 22px;
+}
+
+.opening-content h1 {
+    font-size: clamp(55px, 12vw, 110px);
+
+    font-weight: 400;
+
+    letter-spacing: -4px;
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+.opening-content h1 span {
+    color: #d99aaf;
+
+    font-size: 0.65em;
+
+    margin: 0 8px;
+}
+
+.tagline {
+    font-size: clamp(17px, 3vw, 23px);
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-style: italic;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 42px;
+
+    color: #e8a1b7;
+
+    margin: 10px 0 20px;
+
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.rakhi-text {
+    font-size: clamp(18px, 3vw, 25px);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   START BUTTON
+========================= */
+
+.start-button {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.start-button span {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.start-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+
+    border-color: rgba(255, 255, 255, 0.8);
+
+    transform: translateY(-3px);
+}
+
+.start-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   SECRET TEXT
+========================= */
+
+.secret-text {
+    margin-top: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   MEMORY SECTION
+========================= */
+
+.memory-section {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #f3eee8;
+
+    color: #171313;
+}
+
+.memory-content {
+    width: 100%;
+    max-width: 900px;
+}
+
+.memory-number {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #9a737f;
+
+    margin-bottom: 18px;
+}
+
+.memory-content h2 {
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.memory-intro {
+    max-width: 600px;
+
+    margin: 0 auto 45px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #5d5555;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   MEMORY PHOTO
+========================= */
+
+.memory-photo {
+    width: min(700px, 90vw);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.memory-photo img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 650px;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.memory-photo:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   MEMORY TEXT
+========================= */
+
+.memory-caption {
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #514949;
+}
+
+.memory-divider {
+    margin: 35px 0;
+
+    color: #9a737f;
+
+    font-size: 18px;
+}
+
+.memory-next {
+    font-size: 15px;
+
+    color: #777070;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .opening-content {
+        width: 88%;
+    }
+
+    .small-text {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .opening-content h1 {
+        letter-spacing: -2px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .rakhi-text {
+        font-size: 18px;
+    }
+
+    .start-button {
+        padding: 13px 22px;
+
+        font-size: 15px;
+    }
+
+    .memory-section {
+        padding: 80px 18px;
+    }
+
+    .memory-intro {
+        font-size: 16px;
+    }
+
+    .memory-caption {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   LETTER FROM GOLU
+========================= */
+
+.letter-section {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 120px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #30202a 0%,
+            #171015 45%,
+            #090909 100%
+        );
+
+    color: #f5eeee;
+}
+
+
+.letter-content {
+    width: 100%;
+    max-width: 760px;
+
+    text-align: center;
+}
+
+
+/* Letter heading */
+
+.letter-content h2 {
+    font-size: clamp(42px, 7vw, 72px);
+
+    font-weight: 400;
+
+    margin-bottom: 60px;
+
+    letter-spacing: -1px;
+}
+
+
+/* Letter body */
+
+.letter-text {
+    text-align: left;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+.letter-text p {
+    margin-bottom: 28px;
+}
+
+
+/* Important sentences */
+
+.letter-text .special-line {
+    text-align: center;
+
+    font-size: clamp(21px, 4vw, 28px);
+
+    line-height: 1.7;
+
+    color: #ffffff;
+
+    font-style: italic;
+
+    margin: 50px auto;
+
+    max-width: 650px;
+}
+
+
+.letter-text strong {
+    color: #f1b4c7;
+
+    font-weight: 500;
+}
+
+
+.letter-text em {
+    color: #f1b4c7;
+}
+
+
+/* Final "Always" */
+
+.always-line {
+    text-align: center;
+
+    font-size: clamp(45px, 9vw, 80px);
+
+    line-height: 1;
+
+    color: #f1b4c7;
+
+    font-style: italic;
+
+    margin-top: 60px !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* Signature */
+
+.letter-signature {
+    margin-top: 80px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 21px;
+
+    line-height: 1.8;
+}
+
+
+.letter-signature span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #f1b4c7;
+
+    font-style: italic;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   LETTER MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        padding: 90px 22px;
+    }
+
+    .letter-content h2 {
+        margin-bottom: 45px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+    .letter-text p {
+        margin-bottom: 24px;
+    }
+
+    .letter-text .special-line {
+        font-size: 19px;
+
+        margin: 40px auto;
+    }
+
+    .letter-signature {
+        margin-top: 60px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 18px auto 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.music-button:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+#musicIcon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+}
+
+/* =========================
+   UNIQUE MEMORY ATMOSPHERES
+========================= */
+
+.zoo-memory {
+    background: #f3eee8;
+}
+
+.rakhi-memory {
+    background: #f7edf1;
+}
+
+.sweet-memory {
+    background: #eeeaf3;
+}
+
+.wedding-memory {
+    background: #f2eee5;
+}
+
+.recent-memory {
+    background: #e9ece9;
+}
+
+
+/* =========================
+   MEMORY PHOTO FRAME
+========================= */
+
+.memory-photo {
+    position: relative;
+}
+
+.memory-photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   MEMORY NUMBER
+========================= */
+
+.memory-number {
+    position: relative;
+
+    display: inline-block;
+}
+
+.memory-number::before,
+.memory-number::after {
+    content: "—";
+
+    margin: 0 12px;
+
+    color: #b18a97;
+}
+
+
+/* =========================
+   MEMORY HOVER
+========================= */
+
+.memory-photo {
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.memory-photo:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory-photo::after {
+        inset: 8px;
+    }
+
+    .memory-photo:hover {
+        transform: none;
+    }
+
+}
+
+/* =========================
+   MEMORY JOURNEY
+========================= */
+
+.memory-journey {
+    position: fixed;
+
+    right: 24px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px 7px;
+
+    border-radius: 30px;
+
+    background: rgba(15, 15, 15, 0.72);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+.memory-journey button {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.memory-journey button:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: scale(1.1);
+}
+
+
+.memory-journey button.active {
+    background: #ffffff;
+
+    color: #111111;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory-journey {
+        right: 10px;
+
+        padding: 7px 5px;
+
+        gap: 4px;
+    }
+
+    .memory-journey button {
+        width: 25px;
+        height: 25px;
+
+        font-size: 8px;
+    }
+
+}
+
+/* =========================
+   FINAL REVEAL
+========================= */
+
+.final-reveal {
+    margin-top: 130px;
+
+    padding-top: 80px;
+
+    text-align: center;
+}
+
+
+.final-line {
+    width: 70px;
+    height: 1px;
+
+    margin: 0 auto 45px;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.final-small {
+    margin-bottom: 25px !important;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.final-reveal h3 {
+    margin: 0;
+
+    font-size: clamp(42px, 8vw, 76px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+
+.final-message {
+    margin-top: 35px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.final-heart {
+    margin-top: 55px;
+
+    font-size: 28px;
+
+    color: #f1b4c7;
+
+    animation: finalHeartbeat 2s ease-in-out infinite;
+}
+
+
+.final-names {
+    margin-top: 28px;
+
+    font-size: 24px;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+}
+
+
+.final-names span {
+    margin: 0 8px;
+
+    color: #f1b4c7;
+}
+
+
+.final-rakhi {
+    margin-top: 20px !important;
+
+    color: #f1b4c7;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+
+@keyframes finalHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+
+/* =========================
+   FINAL REVEAL MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .final-reveal {
+        margin-top: 90px;
+
+        padding-top: 60px;
+    }
+
+    .final-reveal h3 {
+        letter-spacing: -1px;
+    }
+
+    .final-message {
+        font-size: 15px;
+    }
+
+    .final-names {
+        font-size: 20px;
+    }
+
+}
+
+/* =========================
+   MUSIC PLAYING EFFECT
+========================= */
+
+body.music-playing .music-button {
+    color: #f1b4c7;
+}
+
+body.music-playing #musicIcon {
+    animation: musicPulse 1.5s ease-in-out infinite;
+    border-color: #f1b4c7;
+}
+
+body.music-playing .heart {
+    animation: musicHeart 1.5s ease-in-out infinite;
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+@keyframes musicHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+/* =========================
+   CINEMATIC SCROLL REVEAL
+========================= */
+
+.memory-content {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.memory-content.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Letter should ALWAYS be visible */
+
+.letter-content {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* Final reveal */
+
+.final-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.final-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MUSIC PLAYING EFFECT
+========================= */
+
+body.music-playing .music-button {
+    color: #f1b4c7;
+}
+
+body.music-playing #musicIcon {
+    animation: musicPulse 1.5s ease-in-out infinite;
+
+    border-color: #f1b4c7;
+}
+
+body.music-playing .heart {
+    animation: musicHeart 1.5s ease-in-out infinite;
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+@keyframes musicHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   FINAL VISUAL POLISH
+========================= */
+
+.memory-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-content,
+.letter-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.memory-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+.memory-photo:hover img {
+    transform: scale(1.025);
+}
+
+
+.memory-intro {
+    max-width: 620px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.8;
+}
+
+
+.memory-caption {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.9;
+}
+
+
+/* =========================
+   PRIVATE ENTRY
+========================= */
+
+.private-entry {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #30202a 0%,
+            #171015 45%,
+            #050505 100%
+        );
+
+    color: #ffffff;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+.private-entry.hidden {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+.private-entry-content {
+    width: 100%;
+
+    max-width: 520px;
+
+    text-align: center;
+}
+
+
+.private-star {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+
+    color: #f1b4c7;
+
+    animation: privateStar 2s ease-in-out infinite;
+}
+
+
+.private-small {
+    margin-bottom: 15px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.private-entry h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 9vw, 70px);
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+
+.private-entry h2 span {
+    color: #f1b4c7;
+}
+
+
+.private-message {
+    margin: 25px auto 20px;
+
+    max-width: 380px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    line-height: 1.8;
+}
+
+
+.secret-question {
+    margin: 0 auto 30px;
+
+    font-size: 20px;
+
+    color: #ffffff;
+
+    font-style: italic;
+
+    letter-spacing: 0.3px;
+}
+
+
+.password-box {
+    display: flex;
+
+    width: 100%;
+    max-width: 380px;
+
+    margin: 0 auto;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+.password-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 16px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+
+.password-box input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+.password-box button {
+    padding: 0 22px;
+
+    border: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: background 0.3s ease;
+}
+
+
+.password-box button:hover {
+    background: #f1b4c7;
+}
+
+
+.password-error {
+    margin-top: 18px;
+
+    color: #f1b4c7;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.password-error.show {
+    opacity: 1;
+}
+
+
+.private-hint {
+    margin-top: 35px;
+
+    color: rgba(255, 255, 255, 0.3);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+@keyframes privateStar {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   HIDDEN ALWAYS MESSAGE
+========================= */
+
+.always-line {
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.always-line:hover {
+    transform: scale(1.05);
+}
+
+
+.hidden-message {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    opacity: 0;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        max-height 0.8s ease;
+}
+
+
+.hidden-message.show {
+    opacity: 1;
+
+    max-height: 250px;
+
+    transform: translateY(0);
+
+    margin-top: 30px;
+}
+
+
+.hidden-message > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #f1b4c7;
+
+    font-size: 20px;
+}
+
+
+.hidden-message p {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.hidden-message small {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #f1b4c7;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE POLISH
+========================= */
+
+@media (max-width: 600px) {
+
+    .memory-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .memory-photo {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .memory-intro {
+        font-size: 16px;
+    }
+
+    .memory-caption {
+        font-size: 15px;
+    }
+
+    .secret-question {
+        font-size: 18px;
+    }
+
+    .password-box input {
+        padding: 14px;
+    }
+
+    .password-box button {
+        padding: 0 18px;
+    }
+
+    .hidden-message p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .memory-content,
+    .letter-content,
+    .final-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
+
+/* =========================
+   LETTER ALIGNMENT FIX
+========================= */
+
+.letter-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.letter-content {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.letter-content h2 {
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.letter-text {
+    width: 100%;
+    text-align: left;
+}
+
+.letter-text p {
+    width: 100%;
+}
+
+.letter-signature {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* =========================
+   LETTER MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .letter-content {
+        width: 100%;
+    }
+
+    .letter-content h2 {
+        font-size: clamp(30px, 9vw, 48px);
+        white-space: nowrap;
+        letter-spacing: -1px;
+    }
+
+    .letter-text {
+        width: 100%;
+        text-align: left;
+    }
+
+}
+
+/* =========================
+   FINAL LETTER CENTER FIX
+========================= */
+
+.letter-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-content {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.letter-content h2 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.letter-text {
+    width: 100%;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.letter-text p {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-text .special-line {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-signature {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .letter-content {
+        width: 100%;
+    }
+
+    .letter-text {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .letter-content h2 {
+        font-size: clamp(30px, 9vw, 48px);
+        white-space: nowrap;
+    }
+
+}
